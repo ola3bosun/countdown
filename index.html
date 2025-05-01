@@ -1,0 +1,74 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="stylesheet" href="styles.css">
+    <title>Frontend Mentor | Launch countdown timer</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution { font-size: 11px; text-align: center; }
+      .attribution a { color: hsl(228, 45%, 44%); }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+    <div class="container" style="background-image: url(images/bg-stars.svg);">
+      <h1 class="launch-heading" id="currentName"></h1>
+  
+      <div class="clock-container">
+        <div class="time-unit">
+          <div class="flip" id="days">
+            <div class="top">00</div>
+            <div class="bottom">00</div>
+            <div class="flip-top"></div>
+            <div class="flip-bottom"></div>
+          </div>
+          <p class="label">DAYS</p>
+        </div>
+  
+        <div class="time-unit">
+          <div class="flip" id="hours">
+            <div class="top">00</div>
+            <div class="bottom">00</div>
+            <div class="flip-top"></div>
+            <div class="flip-bottom"></div>
+          </div>
+          <p class="label">HOURS</p>
+        </div>
+  
+        <div class="time-unit">
+          <div class="flip" id="minutes">
+            <div class="top">00</div>
+            <div class="bottom">00</div>
+            <div class="flip-top"></div>
+            <div class="flip-bottom"></div>
+          </div>
+          <p class="label">MINUTES</p>
+        </div>
+  
+        <div class="time-unit">
+          <div class="flip" id="seconds">
+            <div class="top">00</div>
+            <div class="bottom">00</div>
+            <div class="flip-top"></div>
+            <div class="flip-bottom"></div>
+          </div>
+          <p class="label">SECONDS</p>
+        </div>
+      </div>
+      <div class="bottom_bg" style="background-image: url(images/pattern-hills.svg);"></div>
+    </div>
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    
+  </body>
+  
+  </html>

@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    max-width: 100%;
+    cursor: none;
+}
+
+body {
+    background-image: linear-gradient(hsl(235, 16%, 14%), hsl(234, 17%, 12%));
+    font-family: 'Red Hat Text', sans-serif;
+    color: hsl(0, 0%, 100%);
+    overflow-x: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    position: relative;
+}
+
+.launch-heading {
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 0.5rem;
+    margin-bottom: 4rem;
+}
+
+.clock-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.time-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.flip {
+    background-color: hsl(236, 21%, 26%);
+    width: 150px;
+    height: 150px;
+    perspective: 1000px;
+    position: relative;
+    border-radius: 0.8rem;
+    overflow: hidden;
+    padding: 1rem;
+} 
+
+.top, .bottom, .flip-top, .flip-bottom {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    background: hsl(236, 21%, 26%);
+    color: hsl(345, 95%, 68%);
+    text-align: center;
+    font-size: 4rem;
+    line-height: 75px;
+    font-weight: 900;
+    backface-visibility: hidden;
+}
+
+.top {
+    top: 0;
+    border-bottom: 1px solid #000;
+    clip-path: polygon(
+      6% 0%, 94% 0%, 
+      100% 6%, 100% 94%, 
+      94% 100%, 6% 100%, 
+      0% 94%, 0% 6%
+    );
+}
+
+.bottom {
+    bottom: 0;
+    transform: rotateX(180deg);
+    border-top: 1px solid #000;
+}
+
+.flip-top {
+    top: 0;
+    transform-origin: bottom center;
+}
+
+.flip-bottom {
+    bottom: 0;
+    transform-origin: top center;
+}
+
+.label {
+    margin-top: 1rem;
+    font-size: 1rem;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    color: hsl(237, 18%, 59%);
+}
+
+/* Bottom background image */
+.bottom_bg {
+    height: 200px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom center;
+    position: absolute;
+    bottom: 0;
+}
+
+/* custom cursor */
+.box {
+    position: fixed;
+    width: 150px;
+    height: 150px;
+    background: rgba(255, 255, 255, .3);
+    -webkit-backdrop-filter: blur(100px);
+    backdrop-filter: blur(10px);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(0, 0);
+    transform-origin: center center;
+    transition: opacity .1s ease;
+}
