@@ -1,9 +1,14 @@
-// 🎂 Dynamic friend birthdays
+// friend birthdays
 const friends = [
+    {name: "Resumption / Seeing my baby", date: "2025-05-19T00:00:00" },
     { name: "Tubosun",   date: "2025-06-15T00:00:00" },
     { name: "Chipel",    date: "2025-06-18T00:00:00" },
     { name: "Malik",     date: "2025-07-17T00:00:00" },
+    { name: "Daniboy",   date: "2025-08-02T00:00:00" },
+    { name: "Oladipupo", date: "2025-08-03T00:00:00" },
+    { name: "Olaoluwa",  date: "2025-08-30T00:00:00" },
     { name: "Suleiman",  date: "2025-09-11T00:00:00" },
+    {name:  "BK",       date: "2025-09-03T00:00:00" },
     { name: "Tise",      date: "2025-10-07T00:00:00" },  // normalized “00”
     { name: "Noheemot",  date: "2025-11-30T00:45:00" },
     { name: "Bolaji",    date: "2025-12-15T00:00:00" },
@@ -24,7 +29,7 @@ const friends = [
   
   const nameDisplay = document.getElementById('currentName');
   
-  // Helper: format “5” → “05”
+  
   function formatNumber(n){ return n.toString().padStart(2, '0'); }
   
   // Move to next friend + reset confetti + update UI
@@ -59,7 +64,7 @@ const friends = [
       });
   }
   
-  // Core countdown logic
+  // countdown logic
   function updateCountdown() {
     const now     = new Date();
     const endDate = new Date(friends[nextBirthdayIndex].date);
@@ -103,11 +108,16 @@ const friends = [
   }
   
   // Init UI & start timer
+ if  (nextBirthdayIndex === 0) {
+    nameDisplay.textContent = `${friends[nextBirthdayIndex].name} in…`;
+ } else{
   nameDisplay.textContent = `${friends[nextBirthdayIndex].name}'s Birthday In…`;
+ }
+
   updateCountdown();
   setInterval(updateCountdown, 1000);
   
-  // custom cursor
+  // custom cursor (suposed to be the moon actually, to fit the UI but I flopped that one)
   //quickTo setup for custom cursor box
 const box = document.querySelector('.box');
 const xTo = gsap.quickTo(box, 'x', { duration: 0.15, ease: 'elastic.out(1, 0.3)' });
